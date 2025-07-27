@@ -193,9 +193,29 @@ make savedefconfig BR2_DEFCONFIG=/home/daviv/pessoal/RondaLinux/br-external/conf
 # Load the default configuration
 BR2_EXTERNAL=/home/daviv/pessoal/RondaLinux/br-external/ make bbg_volcan_defconfig
 
+# Download all sources (this can take considerable time)
+make source
+
 # Build the system (using all available CPU cores)
 make -j$(nproc)
 ```
+
+### Download Optimization
+
+To optimize the download process and reuse sources across different Buildroot projects, we use a global download folder. This approach has several benefits:
+- Reuse of downloaded sources across multiple Buildroot projects
+- Reduced storage usage
+- Faster project setup when sources are already cached
+
+You can set up the global download directory by adding this to your shell configuration or setting it before running make:
+```bash
+# Create the directory if it doesn't exist
+mkdir -p ~/buildroot-dl
+# Set global download directory
+export BR2_DL_DIR=~/buildroot-dl
+```
+
+Additionally, we're using a nearby GNU mirror to improve download speeds. This significantly reduces the time needed to fetch source packages from GNU mirrors.
 
 ## 📖 Documentation
 
