@@ -123,7 +123,7 @@ This project is structured as a comprehensive study covering multiple interconne
 ### Phase 1: Base Configuration
 - [X] Out-of-tree Buildroot setup
 - [X] Basic system compilation and boot
-- [ ] Development environment configuration
+- [x] Development environment configuration
 - [X] Version control structure establishment
 
 ### Phase 2: Hardware Integration
@@ -137,7 +137,7 @@ This project is structured as a comprehensive study covering multiple interconne
 - [ ] Sensor communication testing
 
 ### Phase 3: Network and Remote Access
-- [ ] Static IP network configuration
+- [x] Static IP network configuration
 - [ ] SSH service setup and security hardening
 - [ ] USB RNDIS network interface configuration
 - [ ] Network boot implementation (TFTP/NFS)
