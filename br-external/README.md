@@ -170,6 +170,33 @@ This project is structured as a comprehensive study covering multiple interconne
 make -C buildroot O=$PWD/output menuconfig
 ```
 
+## 🛠️ Useful Commands
+
+### Environment Setup
+Since we're using an out-of-tree Buildroot project, it's important to properly set up the environment:
+
+```bash
+# Set BR2_EXTERNAL for the current session
+export BR2_EXTERNAL=/home/daviv/pessoal/RondaLinux/br-external
+```
+
+Note: While you could add this to your shell profile (.bashrc or .zshrc), it's recommended to set it per session as you might work with multiple Buildroot projects.
+
+### Common Build Commands
+```bash
+# Configure the build system
+make menuconfig
+
+# Save current configuration as default
+make savedefconfig BR2_DEFCONFIG=/home/daviv/pessoal/RondaLinux/br-external/configs/bbg_volcan_defconfig
+
+# Load the default configuration
+BR2_EXTERNAL=/home/daviv/pessoal/RondaLinux/br-external/ make bbg_volcan_defconfig
+
+# Build the system (using all available CPU cores)
+make -j$(nproc)
+```
+
 ## 📖 Documentation
 
 Detailed technical documentation is available in the `docs/` folder, including:
