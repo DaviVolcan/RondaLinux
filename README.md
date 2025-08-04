@@ -127,14 +127,26 @@ This project is structured as a comprehensive study covering multiple interconne
 - [X] Version control structure establishment
 
 ### Phase 2: Hardware Integration
-- [ ] OneWire driver implementation
-- [ ] DS18B20 temperature sensors integration and testing
-- [ ] I2C driver implementation
-- [ ] I2C display driver integration and testing
-- [ ] RTC cape integration and configuration
-- [ ] Device Tree overlays implementation and testing
-- [ ] UART device integration
-- [ ] Sensor communication testing
+- [ ] I2C Setup and Testing
+  - [ ] Enable I2C in kernel configuration
+  - [ ] Configure I2C pins in Device Tree
+  - [ ] Test I2C bus with i2c-tools
+  - [ ] Scan I2C bus for devices
+  
+- [ ] DS1307 RTC Integration
+  - [ ] Add DS1307 Device Tree overlay
+  - [ ] Configure kernel for RTC support
+  - [ ] Setup system time synchronization with RTC
+  - [ ] Test RTC persistence across reboots
+  - [ ] Implement RTC backup power handling
+
+- [ ] DS18B20 Temperature Sensor Integration
+  - [ ] Enable OneWire support in kernel
+  - [ ] Configure OneWire pin in Device Tree
+  - [ ] Add DS18B20 driver support
+  - [ ] Test temperature readings
+  - [ ] Implement temperature reading service
+  - [ ] Add temperature logging functionality
 
 ### Phase 3: Network and Remote Access
 - [x] Static IP network configuration
@@ -198,6 +210,21 @@ make source
 
 # Build the system (using all available CPU cores)
 make -j$(nproc)
+```
+
+### Build Analysis Commands
+```bash
+# Generate dependency graph (requires graphviz)
+make graph-depends
+make graph-build
+
+# Generate build time visualization (requires python-matplotlib)
+make graph-duration
+
+# To view the generated graphs
+xdg-open output/graphs/build.pdf
+xdg-open output/graphs/deps.pdf
+xdg-open output/graphs/duration.pdf
 ```
 
 ### Download Optimization
