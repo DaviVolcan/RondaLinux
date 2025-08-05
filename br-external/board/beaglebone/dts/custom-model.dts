@@ -1,0 +1,13 @@
+/dts-v1/;
+/plugin/;
+
+/ {
+    compatible = "ti,am335x-bone-green", "ti,am335x-bone-black", "ti,am335x-bone", "ti,am33xx";
+
+    fragment@0 {
+        target-path = "/";
+        __overlay__ {
+            model = "Training Beagle Bone Black";
+        };
+    };
+};
