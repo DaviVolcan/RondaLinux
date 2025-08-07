@@ -1,0 +1,13 @@
+/dts-v1/;
+/plugin/;
+
+/ {
+    compatible = "ti,am335x-bone-black";
+
+    fragment@0 {
+        target-path = "/";
+        __overlay__ {
+            model = "My custom beaglebone!";
+        };
+    };
+};
