@@ -34,6 +34,13 @@ This study project is structured to provide **deep, hands-on learning** across m
 
 ### Main Platform
 - **BeagleBone Green**
+
+### Required Hardware Components
+- **DS1307**: I2C Real-Time Clock module
+- **SSD1306**: I2C OLED Display (128x64)
+- **DS18B20**: OneWire Temperature Sensor
+- **3x LEDs**: Status indicator LEDs
+
 ### Sensors and Peripherals
 - **OneWire** sensors (temperature, humidity, etc.)
 - **I2C** sensors (accelerometers, gyroscopes, etc.)
@@ -147,6 +154,21 @@ This project is structured as a comprehensive study covering multiple interconne
   - [ ] Test temperature readings
   - [ ] Implement temperature reading service
   - [ ] Add temperature logging functionality
+
+- [ ] SSD1306 OLED Display Integration
+  - [ ] Enable I2C display driver in kernel
+  - [ ] Configure display parameters in Device Tree
+  - [ ] Test display communication
+  - [ ] Implement display initialization
+  - [ ] Create user-space interface for display control
+  - [ ] Develop status display service
+
+- [ ] LED Control System
+  - [ ] Configure GPIO pins in Device Tree
+  - [ ] Implement LED driver support
+  - [ ] Create sysfs interface for LED control
+  - [ ] Implement LED indicators for system status
+  - [ ] Add LED control service
 
 ### Phase 3: Network and Remote Access
 - [x] Static IP network configuration
