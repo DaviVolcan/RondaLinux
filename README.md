@@ -40,6 +40,7 @@ This study project is structured to provide **deep, hands-on learning** across m
 - **SSD1306**: I2C OLED Display (128x64)
 - **DS18B20**: OneWire Temperature Sensor
 - **3x LEDs**: Status indicator LEDs
+- **RS485**: UART to RS485 converter module for industrial communication
 
 ### Sensors and Peripherals
 - **OneWire** sensors (temperature, humidity, etc.)
@@ -134,12 +135,19 @@ This project is structured as a comprehensive study covering multiple interconne
 - [X] Version control structure establishment
 
 ### Phase 2: Hardware Integration
+- [ ] LED Control System
+  - [ ] Configure GPIO pins in Device Tree
+  - [ ] Implement LED driver support
+  - [ ] Create sysfs interface for LED control
+  - [ ] Implement LED indicators for system status
+  - [ ] Add LED control service
+
 - [ ] I2C Setup and Testing
   - [ ] Enable I2C in kernel configuration
   - [ ] Configure I2C pins in Device Tree
   - [ ] Test I2C bus with i2c-tools
   - [ ] Scan I2C bus for devices
-  
+
 - [ ] DS1307 RTC Integration
   - [ ] Add DS1307 Device Tree overlay
   - [ ] Configure kernel for RTC support
@@ -160,15 +168,18 @@ This project is structured as a comprehensive study covering multiple interconne
   - [ ] Configure display parameters in Device Tree
   - [ ] Test display communication
   - [ ] Implement display initialization
-  - [ ] Create user-space interface for display control
+  - [ ] Create a user-space interface for display control
   - [ ] Develop status display service
 
-- [ ] LED Control System
-  - [ ] Configure GPIO pins in Device Tree
-  - [ ] Implement LED driver support
-  - [ ] Create sysfs interface for LED control
-  - [ ] Implement LED indicators for system status
-  - [ ] Add LED control service
+- [ ] RS485 Communication Setup
+  - [ ] Enable UART in kernel configuration
+  - [ ] Configure UART pins in Device Tree for RS485 operation
+  - [ ] Set up RS485 driver support
+  - [ ] Configure RS485 mode (half-duplex/full-duplex)
+  - [ ] Implement flow control and direction control
+  - [ ] Create a user-space interface for RS485 communication
+  - [ ] Test RS485 communication with industrial devices
+  - [ ] Implement communication protocol handlers
 
 ### Phase 3: Network and Remote Access
 - [x] Static IP network configuration
