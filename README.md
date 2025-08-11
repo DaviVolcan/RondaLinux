@@ -139,15 +139,13 @@ This project is structured as a comprehensive study covering multiple interconne
   - [X] Configure GPIO pins in Device Tree
   - [X] Implement LED driver support
 
-- [ ] I2C Setup and Testing
-  - [ ] Enable I2C in kernel configuration
-  - [ ] Configure I2C pins in Device Tree
-  - [ ] Test I2C bus with i2c-tools
-  - [ ] Scan I2C bus for devices
+- [X] I2C Setup and Testing
+  - [X] Test I2C bus with i2c-tools
+  - [X] Scan I2C bus for devices
 
 - [ ] DS1307 RTC Integration
-  - [ ] Add DS1307 Device Tree overlay
-  - [ ] Configure kernel for RTC support
+  - [X] Add DS1307 Device Tree overlay
+  - [X] Configure kernel for RTC support
   - [ ] Setup system time synchronization with RTC
   - [ ] Test RTC persistence across reboots
   - [ ] Implement RTC backup power handling
