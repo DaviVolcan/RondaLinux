@@ -67,5 +67,10 @@
                 trickle-resistor-ohms = <250>;
             };
         };
+    };fragment@4 {
+        target = <&rtc>;
+        __overlay__ {
+            status = "disabled";
+        };
     };
 };
