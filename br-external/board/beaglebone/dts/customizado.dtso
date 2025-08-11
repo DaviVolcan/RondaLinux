@@ -19,9 +19,9 @@
         __overlay__ {
             bb_custom_leds_pins: pinmux-bb-custom-leds-pins {
                 pinctrl-single,pins = <
-                    AM33XX_PADCONF(AM335X_PIN_GPMC_A1, PIN_OUTPUT_PULLDOWN, MUX_MODE7)  /* P9_11: gpmc_ad12.gpio0_30 */
-                    AM33XX_PADCONF(AM335X_PIN_MCASP0_FSR, PIN_OUTPUT_PULLDOWN, MUX_MODE7)  /* P9_11: gpmc_ad12.gpio0_30 */
-                    AM33XX_PADCONF(AM335X_PIN_MCASP0_AXR0, PIN_OUTPUT_PULLDOWN, MUX_MODE7)  /* P9_11: gpmc_ad12.gpio0_30 */
+                    AM33XX_PADCONF(AM335X_PIN_GPMC_A1, PIN_OUTPUT_PULLDOWN, MUX_MODE7)
+                    AM33XX_PADCONF(AM335X_PIN_MCASP0_FSR, PIN_OUTPUT_PULLDOWN, MUX_MODE7)
+                    AM33XX_PADCONF(AM335X_PIN_MCASP0_AXR0, PIN_OUTPUT_PULLDOWN, MUX_MODE7)
                 >;
             };
         };
@@ -54,6 +54,17 @@
                     default-state = "off";
                 };
 
+            };
+        };
+    };
+
+    fragment@3 {
+        target = <&i2c2>;
+        __overlay__ {
+            ds1339: rtc@68 {
+                compatible = "dallas,ds1339";
+                reg = <0x68>;
+                trickle-resistor-ohms = <250>;
             };
         };
     };
