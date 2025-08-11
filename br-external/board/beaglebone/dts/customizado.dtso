@@ -20,6 +20,8 @@
             bb_custom_leds_pins: pinmux-bb-custom-leds-pins {
                 pinctrl-single,pins = <
                     AM33XX_PADCONF(AM335X_PIN_GPMC_A1, PIN_OUTPUT_PULLDOWN, MUX_MODE7)  /* P9_11: gpmc_ad12.gpio0_30 */
+                    AM33XX_PADCONF(AM335X_PIN_MCASP0_FSR, PIN_OUTPUT_PULLDOWN, MUX_MODE7)  /* P9_11: gpmc_ad12.gpio0_30 */
+                    AM33XX_PADCONF(AM335X_PIN_MCASP0_AXR0, PIN_OUTPUT_PULLDOWN, MUX_MODE7)  /* P9_11: gpmc_ad12.gpio0_30 */
                 >;
             };
         };
@@ -39,6 +41,19 @@
                     linux,default-trigger = "none";
                     default-state = "off";
                 };
+                custom_led2 {
+                    label = "custom:red:user2";
+                    gpios = <&gpio3 19 0>;
+                    linux,default-trigger = "none";
+                    default-state = "off";
+                };
+                custom_led3 {
+                    label = "custom:red:user3";
+                    gpios = <&gpio3 16 0>;
+                    linux,default-trigger = "none";
+                    default-state = "off";
+                };
+
             };
         };
     };
