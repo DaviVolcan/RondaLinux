@@ -66,6 +66,18 @@
                 reg = <0x68>;
                 trickle-resistor-ohms = <250>;
             };
+            ssd1306: oled@3c {
+                compatible = "solomon,ssd1306fb-i2c";
+                reg = <0x3c>;
+                solomon,width = <128>;
+                solomon,height = <64>;
+                solomon,page-offset = <0>;
+                /* Propriedades específicas do fbtft */
+                rotation = <0>;
+                fps = <25>;
+                buswidth = <8>;
+                debug = <0>;
+            };
         };
     };fragment@4 {
         target = <&rtc>;
