@@ -1,0 +1,6 @@
+#!/bin/sh
+# loads g_ether module
+
+if ! lsmod | grep -q g_ether; then
+    modprobe g_ether
+fi

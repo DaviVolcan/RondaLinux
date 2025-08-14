@@ -175,10 +175,20 @@ This project is structured as a comprehensive study covering multiple interconne
   - [ ] Test RS485 communication with industrial devices
   - [ ] Implement communication protocol handlers
 
+- [ ] PRU and WS2812 LED Matrix Integration
+  - [ ] Enable PRU subsystem in kernel configuration
+  - [ ] Configure PRU pins in Device Tree
+  - [ ] Load PRU firmware at boot
+  - [ ] Develop PRU firmware for WS2812 timing protocol
+  - [ ] Create user-space interface for LED matrix control
+  - [ ] Implement pattern and animation control
+  - [ ] Test LED matrix functionality
+  - [ ] Add power management considerations
+
 ### Phase 3: Network and Remote Access
 - [x] Static IP network configuration
 - [ ] SSH service setup and security hardening
-- [ ] USB RNDIS network interface configuration
+- [x] USB network interface configuration
 - [ ] Network boot implementation (TFTP/NFS)
 
 ### Phase 4: Application Development
