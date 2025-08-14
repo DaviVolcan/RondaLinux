@@ -79,7 +79,9 @@
                 debug = <0>;
             };
         };
-    };fragment@4 {
+    };
+
+    fragment@4 {
         target = <&rtc>;
         __overlay__ {
             status = "disabled";
