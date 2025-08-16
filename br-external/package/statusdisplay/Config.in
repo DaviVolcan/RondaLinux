@@ -1,0 +1,10 @@
+config BR2_PACKAGE_STATUSDISPLAY
+	bool "statusdisplay"
+	help
+	  Status Display application for monitoring system status.
+
+	  This package provides a display application that shows
+	  system status information.
+
+	  https://davivolcan.com
+#todo check dependencies, good practices and guidelines for packing applications
