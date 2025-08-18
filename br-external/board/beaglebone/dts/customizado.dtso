@@ -72,7 +72,7 @@
                 solomon,width = <128>;
                 solomon,height = <64>;
                 solomon,page-offset = <0>;
-                /* Propriedades específicas do fbtft */
+                solomon,segment-no-remap;
                 rotation = <0>;
                 fps = <25>;
                 buswidth = <8>;
