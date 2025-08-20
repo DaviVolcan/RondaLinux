@@ -32,6 +32,8 @@ This study project is structured to provide **deep, hands-on learning** across m
 
 ## 🛠 Hardware Setup
 
+For detailed hardware architecture and I2C device connections, see [Hardware Architecture Documentation](docs/hardware_architecture.md).
+
 ### Main Platform
 - **BeagleBone Green**
 

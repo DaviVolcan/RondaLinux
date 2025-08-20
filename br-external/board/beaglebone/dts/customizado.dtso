@@ -24,6 +24,11 @@
                     AM33XX_PADCONF(AM335X_PIN_MCASP0_AXR0, PIN_OUTPUT_PULLDOWN, MUX_MODE7)
                 >;
             };
+            bb_custom_motor_pins: pinmux-bb-custom-motor-pins {
+                pinctrl-single,pins = <
+                    AM33XX_PADCONF(AM335X_PIN_GPMC_BEN1, PIN_OUTPUT_PULLDOWN, MUX_MODE7)
+                >;
+            };
         };
     };
 
@@ -55,6 +60,18 @@
                 };
 
             };
+            custom_motor {
+                compatible = "gpio-leds";
+                pinctrl-names = "default";
+                pinctrl-0 = <&bb_custom_motor_pins>;
+
+                custom_motor1 {
+                    label = "custom:motor:enable";
+                    gpios = <&gpio1 28 0>;
+                    linux,default-trigger = "none";
+                    default-state = "off";
+                };
+            };
         };
     };
 
@@ -62,9 +79,8 @@
         target = <&i2c2>;
         __overlay__ {
             ds1339: rtc@68 {
-                compatible = "dallas,ds1339";
+                compatible = "maxim,ds3231";
                 reg = <0x68>;
-                trickle-resistor-ohms = <250>;
             };
             ssd1306: oled@3c {
                 compatible = "solomon,ssd1306fb-i2c";
@@ -78,6 +94,11 @@
                 buswidth = <8>;
                 debug = <0>;
             };
+            mpu6050@69 {
+                compatible = "invensense,mpu6050";
+                reg = <0x69>;
+            };
+
         };
     };
 
