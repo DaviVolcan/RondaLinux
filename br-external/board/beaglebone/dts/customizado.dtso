@@ -24,9 +24,15 @@
                     AM33XX_PADCONF(AM335X_PIN_MCASP0_AXR0, PIN_OUTPUT_PULLDOWN, MUX_MODE7)
                 >;
             };
-            bb_custom_motor_pins: pinmux-bb-custom-motor-pins {
+            lidar_control_pins: lidar-control-pins {
                 pinctrl-single,pins = <
                     AM33XX_PADCONF(AM335X_PIN_GPMC_BEN1, PIN_OUTPUT_PULLDOWN, MUX_MODE7)
+                >;
+            };
+            lidar_serial_pins: lidar-serial-pins {
+                pinctrl-single,pins = <
+                    AM33XX_PADCONF(AM335X_PIN_GPMC_WAIT0, PIN_INPUT_PULLUP, MUX_MODE6)
+                    AM33XX_PADCONF(AM335X_PIN_GPMC_WPN, PIN_OUTPUT_PULLUP, MUX_MODE6)
                 >;
             };
         };
@@ -63,7 +69,7 @@
             custom_motor {
                 compatible = "gpio-leds";
                 pinctrl-names = "default";
-                pinctrl-0 = <&bb_custom_motor_pins>;
+                pinctrl-0 = <&lidar_control_pins>;
 
                 custom_motor1 {
                     label = "custom:motor:enable";
@@ -107,5 +113,14 @@
         __overlay__ {
             status = "disabled";
         };
+    };
+    fragment@5 {
+        target = <&uart4>;
+        __overlay__ {
+            pinctrl-names = "default";
+            pinctrl-0 = <&lidar_serial_pins>;
+            status = "okay";
+        };
+    };
     };
 };
