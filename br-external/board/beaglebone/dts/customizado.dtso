@@ -35,6 +35,12 @@
                     AM33XX_PADCONF(AM335X_PIN_GPMC_WPN, PIN_OUTPUT_PULLUP, MUX_MODE6)
                 >;
             };
+            gps_serial_pins: gps-serial-pins {
+                pinctrl-single,pins = <
+                    AM33XX_PADCONF(AM335X_PIN_UART1_TXD, PIN_OUTPUT, MUX_MODE0)
+                    AM33XX_PADCONF(AM335X_PIN_UART1_RXD, PIN_INPUT, MUX_MODE0)
+                >;
+            };
         };
     };
 
@@ -122,5 +128,13 @@
             status = "okay";
         };
     };
+    fragment@6 {
+        target = <&uart1>;
+        __overlay__ {
+            status = "okay";
+            pinctrl-names = "default";
+            current-speed = <9600>;
+            pinctrl-0 = <&gps_serial_pins>;
+        };
     };
 };
